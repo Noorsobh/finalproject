@@ -56,10 +56,8 @@ const AddNews = () => {
 
   return (
     <div className="container mt-5">
-      <div className="text-end mb-4">
-        <h3>مرحباً علي!</h3>
-
-    <p>`${user}`</p>
+      <div className="text-end mb-4 ">
+        <h3 className='text-black'>مرحباً علي!</h3>
       </div>
 
       <div className="text-center mb-4" >
