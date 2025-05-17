@@ -76,7 +76,7 @@ const UserLogin = () => {
               transition={{ delay: 0.2 }}
               className="text-center text-white z-3"
             >
-              <h2 className="display-4 fw-bold mb-4">أهلاً بك من جديد!</h2>
+              <h2 className="display-4 fw-bold mb-4 text-white">أهلاً بك من جديد!</h2>
               <p className="fs-4 mb-4">ليس لديك حساب بعد؟</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}

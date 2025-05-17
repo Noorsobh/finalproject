@@ -12,8 +12,6 @@ const UserSignUp = () => {
     phone: '',
     password: '',
     confirmPassword: '',
-    pressCard: '',
-    specialization: 'general'
   });
 
   const [errors, setErrors] = useState({});
@@ -26,7 +24,6 @@ const UserSignUp = () => {
     const arabicNameRegex = /^[\u0600-\u06FF\s]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{10,15}$/;
-    const pressCardRegex = /^[a-zA-Z0-9]{6,20}$/;
 
     if (!formData.fullName.trim()) {
       newErrors.fullName = 'الاسم الكامل مطلوب';
@@ -87,7 +84,7 @@ const UserSignUp = () => {
       console.log('تم إرسال البيانات:', formData);
       
       // توجيه المستخدم بعد التسجيل الناجح
-      navigate('/add-news', {
+      navigate('/', {
         state: { newlyRegistered: true },
         replace: true
       });
@@ -104,15 +101,6 @@ const UserSignUp = () => {
       navigate('/user-login');
     }, 500);
   };
-
-  const specializations = [
-    { value: 'general', label: 'صحافة عامة' },
-    { value: 'politics', label: 'السياسة' },
-    { value: 'sports', label: 'الرياضة' },
-    { value: 'economy', label: 'الاقتصاد' },
-    { value: 'culture', label: 'الثقافة والفنون' },
-    { value: 'technology', label: 'التكنولوجيا' }
-  ];
 
   return (
     <div className='mt-4'>
@@ -315,6 +303,10 @@ const UserSignUp = () => {
                   {isTransitioning ? "جارٍ التوجيه..." : "سجل الدخول"}
                 </motion.button>
               </motion.div>
+                  {/* دوائر مزخرفة */}
+            <div className="circle one"></div>
+            <div className="circle two"></div>
+            <div className="circle three"></div>
             </div>
           </div>
 
@@ -376,7 +368,7 @@ const UserSignUp = () => {
               className="text-center text-white z-1"
             >
               <motion.h2 
-                className="display-4 fw-bold mb-4"
+                className="display-4 fw-bold mb-4  text-white"
                 whileHover={{ scale: 1.02 }}
               >
                 مرحباً بك في مجتمعنا
@@ -417,6 +409,67 @@ const UserSignUp = () => {
           </div>
         </motion.div>
       </div>
+            <style>{`
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0; /* تأكد إنها تحت كل المحتوى */
+    pointer-events: none;
+  }
+
+  .circle.one {
+    width: 150px;
+    height: 150px;
+    top: 20px;
+    left: 20px;
+    background: #ffffff;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .circle.two {
+    width: 200px;
+    height: 200px;
+    bottom: 30px;
+    right: 40px;
+    background: #cbd5e1;
+    animation: float 7s ease-in-out infinite reverse;
+  }
+
+  .circle.three {
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    animation: float 5s ease-in-out infinite alternate;
+  }
+
+  .circle.fore {
+    width: 120px;
+    height: 120px;
+    top: 300px;
+    left: 70%;
+    background: #cbd5e1;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .circle.fife {
+    width: 80px;
+    height: 80px;
+    top: 500px;
+    right: 100px;
+    background: #ffffff;
+    animation: float 5s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+`}</style>
     </div>
   );
 };

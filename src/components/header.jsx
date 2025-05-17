@@ -152,9 +152,10 @@ const Header = () => {
     },
     navLink: {
       color: "#333",
-      fontWeight: 400,
+      fontWeight: 600,
       padding: "0.4rem 0.6rem",
       textDecoration: "none",
+      margin:"0 10px"
     },
     navLinkHover: {
       color: "#4c8565",

@@ -2,7 +2,6 @@ import React from "react";
 import { useScroll, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 import myImage from "./images/تنزيل.jpg";
 import BreakingNewsTicker from "./BreakingNewsTicker";
 import ArticlesGrid from "./ArticlesGrid";
