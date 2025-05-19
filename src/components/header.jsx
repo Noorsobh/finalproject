@@ -50,7 +50,7 @@ const ScrollToTopButton = () => {
       transition: "all 0.3s ease",
     },
     a: {
-      textDecoration: "none !important",
+      textDecoration: "none ",
     },
     scrollButtonHover: {
       backgroundColor: "#0d9488",
@@ -59,9 +59,6 @@ const ScrollToTopButton = () => {
     arrowIcon: {
       width: "24px",
       height: "24px",
-    },
-    a:{
-      textDecoration:"none !important", 
     }
   };
 
